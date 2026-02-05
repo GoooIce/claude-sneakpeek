@@ -76,6 +76,31 @@ export const PROVIDER_EDUCATION: Record<string, ProviderEducation> = {
     setupNote: 'Subscribe to MiniMax Coding Plan, then get your API key from the payment page.',
   },
 
+  zhipu: {
+    headline: 'GLM-4.7 via Zhipu AI BigModel',
+    tagline: 'Cognitive blue, analytical power',
+    features: [
+      'GLM-4.7 for Sonnet/Opus tasks',
+      'GLM-4.5-Air for Haiku (fast) tasks',
+      'Prompt pack with MCP server guidance',
+      'Professional blue-themed interface',
+    ],
+    bestFor: 'Analytical work with GLM-4.7 reasoning capabilities',
+    models: {
+      opus: 'glm-4.7',
+      sonnet: 'glm-4.7',
+      haiku: 'glm-4.5-air',
+    },
+    requiresMapping: false,
+    hasPromptPack: true,
+    setupLinks: {
+      subscribe: 'https://open.bigmodel.cn/usercenter/apikeys',
+      apiKey: 'https://open.bigmodel.cn/usercenter/apikeys',
+      docs: 'https://open.bigmodel.cn/dev/api',
+    },
+    setupNote: 'Create a Zhipu AI account, then generate your API key from the user center.',
+  },
+
   openrouter: {
     headline: 'OpenRouter — One API, Any Model',
     tagline: 'Many paths, one door',
@@ -143,9 +168,9 @@ export const getProviderEducation = (providerKey: string): ProviderEducation | n
  * Quick comparison points for provider selection
  */
 export const PROVIDER_COMPARISON = {
-  fullySupported: ['mirror', 'zai', 'minimax'],
+  fullySupported: ['mirror', 'zai', 'minimax', 'zhipu'],
   requiresMapping: ['openrouter'],
-  hasPromptPack: ['zai', 'minimax'],
+  hasPromptPack: ['zai', 'minimax', 'zhipu'],
   localFirst: ['ccrouter'],
   pureClaudeCode: ['mirror'],
   recommended: ['mirror'],

@@ -49,7 +49,23 @@ npx @realmikekelly/claude-sneakpeek remove claudesp         # Uninstall
 
 ## Alternative providers
 
-Supports Z.ai, MiniMax, OpenRouter, and local models via cc-mirror. See [docs/providers.md](docs/providers.md).
+Supports Z.ai, MiniMax, Zhipu AI, OpenRouter, and local models via cc-mirror. See [docs/providers.md](docs/providers.md).
+
+**Quick examples:**
+
+```bash
+# Z.ai (GLM models)
+npx @realmikekelly/claude-sneakpeek quick --provider zai --api-key "$Z_AI_API_KEY"
+
+# MiniMax (MiniMax-M2.1)
+npx @realmikekelly/claude-sneakpeek quick --provider minimax --api-key "$MINIMAX_API_KEY"
+
+# Zhipu AI (智谱AI GLM-4.7)
+npx @realmikekelly/claude-sneakpeek quick --provider zhipu --api-key "$ZHIPU_API_KEY"
+
+# OpenRouter (100+ models)
+npx @realmikekelly/claude-sneakpeek quick --provider openrouter --api-key "$OPENROUTER_API_KEY"
+```
 
 ## Credits
 

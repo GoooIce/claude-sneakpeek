@@ -20,6 +20,14 @@ export const PROVIDERS = [
     colorCode: '\\x1b[38;5;203m', // Coral/salmon red
   },
   {
+    key: 'zhipu',
+    name: 'Zhipu AI',
+    apiKey: 'test-zhipu-key',
+    expectedThemeId: 'zhipu-intelligence',
+    expectedSplashStyle: 'zhipu',
+    colorCode: '\\x1b[38;5;33m', // Zhipu blue
+  },
+  {
     key: 'openrouter',
     name: 'OpenRouter',
     apiKey: 'test-openrouter-key',

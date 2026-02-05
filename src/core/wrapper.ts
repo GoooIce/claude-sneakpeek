@@ -19,6 +19,11 @@ const C = {
   mmSecondary: '\x1b[38;5;209m', // Light coral/orange
   mmAccent: '\x1b[38;5;208m', // Orange
   mmDim: '\x1b[38;5;167m', // Muted coral/dark red
+  // Zhipu: Blue gradient (Zhipu blue)
+  zhipuPrimary: '\x1b[38;5;33m', // Zhipu blue
+  zhipuSecondary: '\x1b[38;5;39m', // Sky blue
+  zhipuAccent: '\x1b[38;5;45m', // Bright cyan
+  zhipuDim: '\x1b[38;5;27m', // Deep blue
   // OpenRouter: Cyan/Teal gradient
   orPrimary: '\x1b[38;5;43m', // Teal
   orSecondary: '\x1b[38;5;49m', // Bright teal
@@ -64,6 +69,19 @@ const SPLASH_ART: SplashArt = {
     '',
     `${C.mmDim}    ━━━━━━━━━━━━━━━━━━${C.mmPrimary}◆${C.mmDim}━━━━━━━━━━━━━━━━━━${C.reset}`,
     `${C.mmSecondary}           MiniMax-M2.1 ${C.mmDim}━${C.mmSecondary} AGI for All${C.reset}`,
+    '',
+  ],
+  zhipu: [
+    '',
+    `${C.zhipuPrimary}     ██████╗ ███████╗ █████╗ ███╗   ███╗${C.reset}`,
+    `${C.zhipuPrimary}    ██╔════╝██╔════╝██╔══██╗████╗ ████║${C.reset}`,
+    `${C.zhipuSecondary}    ██║     █████╗  ███████║██╔████╔██║${C.reset}`,
+    `${C.zhipuSecondary}    ██║     ██╔══╝  ██╔══██║██║╚██╔╝██║${C.reset}`,
+    `${C.zhipuAccent}    ╚██████╗███████╗██║  ██║██║ ╚═╝ ██║${C.reset}`,
+    `${C.zhipuAccent}     ╚═════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝${C.reset}`,
+    '',
+    `${C.zhipuDim}    ━━━━━━━━━━━━━${C.zhipuPrimary}◆${C.zhipuDim}━━━━━━━━━━━━━${C.reset}`,
+    `${C.zhipuSecondary}      GLM-4.7 ${C.zhipuDim}━${C.zhipuSecondary} BigModel.cn${C.reset}`,
     '',
   ],
   openrouter: [
@@ -123,7 +141,7 @@ const SPLASH_ART: SplashArt = {
   ],
 };
 
-const KNOWN_SPLASH_STYLES = ['zai', 'minimax', 'openrouter', 'ccrouter', 'mirror'];
+const KNOWN_SPLASH_STYLES = ['zai', 'minimax', 'zhipu', 'openrouter', 'ccrouter', 'mirror'];
 
 const buildWindowsWrapperScript = (opts: {
   configDir: string;
@@ -323,6 +341,12 @@ export const writeWrapper = (
     "        cat <<'CCMMIN'",
     ...SPLASH_ART.minimax,
     'CCMMIN',
+    '        __cc_show_label="0"',
+    '        ;;',
+    '      zhipu)',
+    "        cat <<'CCMZHIPU'",
+    ...SPLASH_ART.zhipu,
+    'CCMZHIPU',
     '        __cc_show_label="0"',
     '        ;;',
     '      openrouter)',

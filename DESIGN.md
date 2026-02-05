@@ -83,6 +83,33 @@ Default `<bin-dir>` is `~/.local/bin` on macOS/Linux and `~/.claude-sneakpeek/bi
 
 Provider templates are plain TS objects; add new providers by extending `src/providers/index.ts`.
 
+**Example: Adding Zhipu AI**
+
+```typescript
+// src/providers/index.ts
+zhipu: {
+  key: 'zhipu',
+  label: 'Zhipu AI',
+  description: '智谱AI BigModel.cn',
+  baseUrl: 'https://open.bigmodel.cn/api/anthropic',
+  env: {
+    ANTHROPIC_DEFAULT_SONNET_MODEL: 'glm-4.7',
+    ANTHROPIC_DEFAULT_OPUS_MODEL: 'glm-4.7',
+    ANTHROPIC_DEFAULT_HAIKU_MODEL: 'glm-4.5-air',
+  },
+  apiKeyLabel: 'Zhipu AI API Key (from https://open.bigmodel.cn)',
+  authMode: 'apiKey',
+  defaultBrand: 'zhipu-intelligence',
+  enablesPromptPack: true,
+}
+```
+
+**Key implementation files:**
+- Provider config: `src/providers/index.ts`
+- Brand theme: `src/brands/zhipu.ts`
+- Prompt pack: `src/core/prompt-pack/providers/zhipu.ts`
+- Blocked tools: Empty array (uses standard Claude Code tools)
+
 ## Auth Handling
 
 When an API key is supplied, claude-sneakpeek writes `ANTHROPIC_API_KEY` into the variant config
@@ -112,7 +139,15 @@ dev-browser is installed into `~/.claude-sneakpeek/<variant>/config/skills/dev-b
 ## Brand Presets
 
 Brand presets are optional tweakcc configurations written into `~/.claude-sneakpeek/<variant>/tweakcc/config.json`.
-Presets are provider-aware (e.g., `zai` auto-selects the Z.ai Carbon skin, `minimax` selects MiniMax Pulse) but can be overridden via `--brand`.
+Presets are provider-aware (e.g., `zai` auto-selects the Z.ai Carbon skin, `minimax` selects MiniMax Pulse, `zhipu` selects Zhipu Intelligence) but can be overridden via `--brand`.
+
+**Available brand presets:**
+- `mirror` — Mirror Claude (silver/chrome)
+- `zai` — Z.ai Carbon (dark carbon with gold)
+- `minimax` — MiniMax Pulse (coral/red/orange)
+- `zhipu` — Zhipu Intelligence (智谱蓝 #0066FF)
+- `openrouter` — OpenRouter Teal (teal/cyan)
+- `ccrouter` — CCRouter Sky (sky blue)
 
 ## Install (npm-only)
 

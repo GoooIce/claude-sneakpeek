@@ -85,6 +85,22 @@ const PROVIDERS: Record<string, ProviderTemplate> = {
     },
     apiKeyLabel: 'MiniMax API key',
   },
+  zhipu: {
+    key: 'zhipu',
+    label: 'Zhipu AI',
+    description: 'GLM-4.7 via Zhipu AI BigModel',
+    baseUrl: 'https://open.bigmodel.cn/api/anthropic',
+    env: {
+      API_TIMEOUT_MS: DEFAULT_TIMEOUT_MS,
+      ANTHROPIC_DEFAULT_HAIKU_MODEL: 'glm-4.5-air',
+      ANTHROPIC_DEFAULT_SONNET_MODEL: 'glm-4.7',
+      ANTHROPIC_DEFAULT_OPUS_MODEL: 'glm-4.7',
+      CC_MIRROR_SPLASH: 1,
+      CC_MIRROR_PROVIDER_LABEL: 'Zhipu AI',
+      CC_MIRROR_SPLASH_STYLE: 'zhipu',
+    },
+    apiKeyLabel: 'Zhipu API key',
+  },
   openrouter: {
     key: 'openrouter',
     label: 'OpenRouter',

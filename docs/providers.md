@@ -17,8 +17,20 @@ npx @realmikekelly/claude-sneakpeek quick --provider mirror --name claudesp
 | **mirror**     | Claude (Anthropic)     | OAuth/Key  | Standard Claude Code experience |
 | **Z.ai**       | GLM-4.7, GLM-4.5-Air   | API Key    | Heavy coding with GLM reasoning |
 | **MiniMax**    | MiniMax-M2.1           | API Key    | Unified model experience        |
+| **Zhipu AI**   | GLM-4.7, GLM-4.5-Air   | API Key    | Chinese AI with cognitive tools |
 | **OpenRouter** | 100+ models            | Auth Token | Model flexibility, pay-per-use  |
 | **CCRouter**   | Ollama, DeepSeek, etc. | Optional   | Local-first development         |
+
+**Provider Details:**
+
+| Provider       | Features                                                              |
+| -------------- | --------------------------------------------------------------------- |
+| **mirror**     | Standard Anthropic API, OAuth or API key auth                         |
+| **Z.ai**       | GLM-4.7 models, zai-cli integration, gold theme                       |
+| **MiniMax**    | MiniMax-M2.1, MCP server for web search, coral theme                  |
+| **Zhipu AI**   | GLM-4.7, prompt pack with MCP guidance, professional blue theme      |
+| **OpenRouter** | 100+ models, pay-per-use, teal theme                                  |
+| **CCRouter**   | Local LLMs (Ollama, DeepSeek), configurable routing, sky blue theme   |
 
 ## Examples
 
@@ -28,6 +40,9 @@ npx @realmikekelly/claude-sneakpeek quick --provider zai --api-key "$Z_AI_API_KE
 
 # MiniMax (MiniMax-M2.1)
 npx @realmikekelly/claude-sneakpeek quick --provider minimax --api-key "$MINIMAX_API_KEY"
+
+# Zhipu AI (智谱AI)
+npx @realmikekelly/claude-sneakpeek quick --provider zhipu --api-key "$ZHIPU_API_KEY"
 
 # OpenRouter (100+ models)
 npx @realmikekelly/claude-sneakpeek quick --provider openrouter --api-key "$OPENROUTER_API_KEY" \
@@ -40,14 +55,14 @@ npx @realmikekelly/claude-sneakpeek quick --provider ccrouter
 ## CLI Options
 
 ```
---provider <name>        mirror | zai | minimax | openrouter | ccrouter | custom
+--provider <name>        mirror | zai | minimax | zhipu | openrouter | ccrouter | custom
 --name <name>            Variant name (becomes the CLI command)
 --api-key <key>          Provider API key
 --base-url <url>         Custom API endpoint
 --model-sonnet <name>    Map to sonnet model
 --model-opus <name>      Map to opus model
 --model-haiku <name>     Map to haiku model
---brand <preset>         Theme: auto | zai | minimax | openrouter | ccrouter | mirror
+--brand <preset>         Theme: auto | zai | minimax | zhipu | openrouter | ccrouter | mirror
 --no-tweak               Skip tweakcc theme
 --no-prompt-pack         Skip provider prompt pack
 ```
@@ -61,5 +76,6 @@ Each provider includes a custom color theme via [tweakcc](https://github.com/Pie
 | **mirror**     | Silver/chrome with electric blue |
 | **zai**        | Dark carbon with gold accents    |
 | **minimax**    | Coral/red/orange spectrum        |
+| **zhipu**      | Professional blue with cognitive verbs |
 | **openrouter** | Teal/cyan gradient               |
 | **ccrouter**   | Sky blue accents                 |

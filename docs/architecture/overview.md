@@ -68,12 +68,13 @@ src/
 │   └── prompt-pack/       # System prompt overlays
 │
 ├── providers/              # Provider templates
-│   └── index.ts           # zai, minimax, openrouter, ccrouter, mirror
+│   └── index.ts           # zai, minimax, zhipu, openrouter, ccrouter, mirror
 │
 └── brands/                 # Theme presets
     ├── index.ts           # Brand registry
     ├── zai.ts             # Gold theme
     ├── minimax.ts         # Coral theme
+    ├── zhipu.ts           # Zhipu Intelligence blue theme
     ├── openrouter.ts      # Teal theme
     ├── ccrouter.ts        # Sky theme
     └── mirror.ts          # Silver/chrome theme
@@ -223,6 +224,7 @@ interface ProviderTemplate {
 │   Feature     │ Proxy      │ Router     │ Direct     │ Description        │
 │               │ (zai,      │ (ccrouter) │ (mirror)   │                    │
 │               │ minimax,   │            │            │                    │
+│               │ zhipu,     │            │            │                    │
 │               │ openrouter)│            │            │                    │
 ├───────────────┼────────────┼────────────┼────────────┼────────────────────┤
 │ BASE_URL      │ ✓ Set      │ ✓ Set      │ ✗ Not set  │ API endpoint       │
@@ -232,6 +234,17 @@ interface ProviderTemplate {
 │ Team mode     │ Optional   │ Optional   │ ✓ Default  │ Task tools         │
 └───────────────┴────────────┴────────────┴────────────┴────────────────────┘
 ```
+
+**Available Providers:**
+
+| Provider  | Type      | Models                  | Auth       | Theme               |
+|-----------|-----------|-------------------------|------------|---------------------|
+| mirror    | Direct    | Claude Default          | OAuth/Key  | Mirror Claude       |
+| zai       | Proxy     | GLM-4.7, GLM-4.5-Air    | API Key    | Z.ai Carbon         |
+| minimax   | Proxy     | MiniMax-M2.1            | API Key    | MiniMax Pulse       |
+| **zhipu** | **Proxy** | **GLM-4.7, GLM-4.5-Air**| **API Key**| **Zhipu Intelligence**|
+| openrouter| Proxy     | User Configured         | Auth Token | OpenRouter Teal     |
+| ccrouter  | Router    | Configured              | Optional   | CCRouter Sky        |
 
 ---
 

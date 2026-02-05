@@ -1,4 +1,4 @@
-export type PromptPackKey = 'zai' | 'minimax';
+export type PromptPackKey = 'zai' | 'minimax' | 'zhipu';
 export type PromptPackMode = 'minimal';
 
 export type OverlayKey =
